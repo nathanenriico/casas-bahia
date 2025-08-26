@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Casas Bahia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .checkout-header {
+            background: #0033C6;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .checkout-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .casas {
+            color: white;
+        }
+        
+        .bahia {
+            color: #ff6600;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .checkout-title {
+            color: #0033C6;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .produto-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .produto-imagem {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        .produto-nome {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .protecao-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .protecao-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .protecao-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .protecao-icon {
+            width: 50px;
+            height: 50px;
+            background: #0033C6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .protecao-titulo {
+            color: #0033C6;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .protecao-descricao {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .protecao-opcao {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        .protecao-opcao:hover {
+            border-color: #0033C6;
+        }
+        
+        .opcao-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .opcao-radio {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .opcao-detalhes {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .opcao-periodo {
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .opcao-preco {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .preco-valor {
+            color: #0033C6;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .ver-mais {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+        }
+        
+        .ver-mais:hover {
+            text-decoration: underline;
+        }
+        
+        .resumo-section {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .resumo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .resumo-label {
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .resumo-valor {
+            color: #0033C6;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .btn-continuar {
+            background: #00aa00;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .btn-continuar:hover {
+            background: #009900;
+        }
+        
+        /* Responsividade completa para checkout */
+        @media (max-width: 1024px) {
+            .main-content {
+                padding: 30px 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-header .container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .header-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-link {
+                font-size: 12px;
+            }
+            
+            .main-content {
+                padding: 20px 10px;
+            }
+            
+            .checkout-title {
+                font-size: 22px;
+                text-align: center;
+            }
+            
+            .produto-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .produto-imagem {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .produto-nome {
+                font-size: 13px;
+                text-align: center;
+            }
+            
+            .protecao-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .protecao-card {
+                padding: 20px;
+            }
+            
+            .protecao-titulo {
+                font-size: 18px;
+            }
+            
+            .protecao-opcao {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .opcao-info {
+                justify-content: center;
+            }
+            
+            .resumo-section {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .checkout-header {
+                padding: 15px 0;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .header-links {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 15px 8px;
+            }
+            
+            .checkout-title {
+                font-size: 18px;
+            }
+            
+            .produto-imagem {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .produto-nome {
+                font-size: 12px;
+            }
+            
+            .protecao-card {
+                padding: 15px;
+            }
+            
+            .protecao-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .protecao-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .protecao-titulo {
+                font-size: 16px;
+            }
+            
+            .protecao-descricao {
+                font-size: 13px;
+                text-align: center;
+            }
+            
+            .opcao-detalhes {
+                text-align: center;
+            }
+            
+            .preco-valor {
+                font-size: 16px;
+            }
+            
+            .resumo-section {
+                padding: 15px;
+            }
+            
+            .resumo-item {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .btn-continuar {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .checkout-title {
+                font-size: 16px;
+            }
+            
+            .protecao-titulo {
+                font-size: 14px;
+            }
+            
+            .protecao-descricao {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="checkout-header">
+        <div class="container">
+            <div class="logo">
+                <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
+            </div>
+            <div class="header-links">
+                <a href="#" class="header-link">
+                    <span>💬</span>
+                    <span>Central de atendimento</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>📦</span>
+                    <span>Meus pedidos</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>🔒</span>
+                    <span>Ambiente 100% seguro</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h1 class="checkout-title">Muito mais proteção para o seu produto!</h1>
+        
+        <div class="produto-info">
+            <img src="./checkout A6/1g.avif" alt="Samsung Galaxy A06" class="produto-imagem">
+            <span class="produto-nome">Smartphone Samsung Galaxy A06 Azul Escuro 4G 128GB 4GB RAM Tela 6,7" Processador Octa-Core, Câmera Traseira de 50MP e Selfie de 8MP</span>
+        </div>
+
+        <div class="protecao-section">
+            <div class="protecao-card">
+                <div class="protecao-header">
+                    <div class="protecao-icon">🛡️</div>
+                    <div class="protecao-titulo">Fique Seguro</div>
+                </div>
+                <div class="protecao-descricao">
+                    Proteja seu produto contra Roubo, Furto Qualificado e Quebra Acidental.
+                </div>
+                
+                <div class="protecao-opcao">
+                    <div class="opcao-info">
+                        <input type="checkbox" name="fique-seguro" class="opcao-radio" onchange="updateTotal()">
+                        <div class="opcao-detalhes">
+                            <div class="opcao-periodo">12 meses</div>
+                            <div class="opcao-preco">em até 10x</div>
+                        </div>
+                    </div>
+                    <div class="preco-valor">R$ 19,63</div>
+                </div>
+                
+                <a href="#" class="ver-mais">Ver mais ⌄</a>
+            </div>
+
+            <div class="protecao-card">
+                <div class="protecao-header">
+                    <div class="protecao-icon">🔧</div>
+                    <div class="protecao-titulo">Suporte Remoto</div>
+                </div>
+                <div class="protecao-descricao">
+                    Contrate assistência 24h, 7 dias por semana, proteção digital e armazenamento em nuvem.
+                </div>
+                
+                <div class="protecao-opcao">
+                    <div class="opcao-info">
+                        <input type="checkbox" name="suporte-remoto" class="opcao-radio" onchange="updateTotal()">
+                        <div class="opcao-detalhes">
+                            <div class="opcao-periodo">8 GB</div>
+                            <div class="opcao-preco">em até 10x</div>
+                        </div>
+                    </div>
+                    <div class="preco-valor">R$ 5,99</div>
+                </div>
+                
+                <a href="#" class="ver-mais">Ver mais ⌄</a>
+            </div>
+        </div>
+
+        <div class="resumo-section">
+            <div class="resumo-item">
+                <span class="resumo-label">Produto</span>
+                <span class="resumo-valor">R$ 397,99</span>
+            </div>
+            <div class="resumo-item">
+                <span class="resumo-label">Subtotal</span>
+                <span class="resumo-valor" id="subtotal">R$ 397,99</span>
+            </div>
+            <button class="btn-continuar" onclick="window.location.href='carrinho.html'">Continuar</button>
+        </div>
+    </main>
+    <script>
+        function updateTotal() {
+            let total = 397.99;
+            
+            if (document.querySelector('input[name="fique-seguro"]').checked) {
+                total += 19.63;
+            }
+            
+            if (document.querySelector('input[name="suporte-remoto"]').checked) {
+                total += 5.99;
+            }
+            
+            document.getElementById('subtotal').textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação - Casas Bahia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #FCFCFC;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .voltar-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        .page-title {
+            color: #0033C6;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: #0033C6;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .section-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #0033C6;
+        }
+        
+        .form-example {
+            color: #999;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        
+        .btn-continuar {
+            width: 100%;
+            background: #ccc;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: not-allowed;
+            margin-bottom: 30px;
+        }
+        
+        .btn-continuar.active {
+            background: #00aa00;
+            cursor: pointer;
+        }
+        
+        .btn-continuar.active:hover {
+            background: #009900;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e5e5e5;
+        }
+        
+        .divider-text {
+            background: white;
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .google-btn {
+            width: 100%;
+            background: white;
+            border: 1px solid #e5e5e5;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .google-btn:hover {
+            background: #f8f9fa;
+        }
+        
+        .endereco-section {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .endereco-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .endereco-principal {
+            color: #ff9900;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .novo-endereco {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .endereco-nome {
+            color: #0033C6;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .endereco-detalhes {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .escolher-outro {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 15px;
+        }
+        
+        /* Responsividade completa para identificação */
+        @media (max-width: 1024px) {
+            .main-container {
+                padding: 30px 15px;
+            }
+            
+            .form-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px 10px;
+            }
+            
+            .form-container {
+                padding: 25px;
+                margin: 0 10px;
+            }
+            
+            .page-title {
+                font-size: 26px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 18px;
+                text-align: center;
+            }
+            
+            .form-row, .form-row-3 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .endereco-section {
+                padding: 15px;
+            }
+            
+            .endereco-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 15px 5px;
+            }
+            
+            .form-container {
+                padding: 20px;
+                margin: 0 5px;
+                border-radius: 4px;
+            }
+            
+            .page-title {
+                font-size: 22px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .form-input {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            .btn-continuar {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            .google-btn {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .endereco-section {
+                padding: 12px;
+            }
+            
+            .endereco-nome {
+                font-size: 14px;
+            }
+            
+            .endereco-detalhes {
+                font-size: 13px;
+            }
+            
+            .voltar-link {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .form-container {
+                padding: 15px;
+            }
+            
+            .page-title {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 14px;
+            }
+            
+            .form-input {
+                font-size: 13px;
+            }
+        }
+        
+        /* Melhorias para touch */
+        @media (hover: none) and (pointer: coarse) {
+            .form-input {
+                min-height: 44px;
+            }
+            
+            .btn-continuar {
+                min-height: 44px;
+            }
+            
+            .google-btn {
+                min-height: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LG Banner -->
+    <div class="lg-banner">
+        <img src="/imagens/Lg-master-1920x35.png" alt="LG Banner">
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
+                <div class="accessibility">
+                    <span class="accessibility-icon">♿</span>
+                    <span class="accessibility-text">Acessibilidade</span>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" placeholder="O que você tá procurando?" class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            
+            <div class="header-actions">
+                <div class="action-item cep">
+                    <span class="truck-icon">🚚</span>
+                    <span>Informe seu CEP</span>
+                </div>
+                <div class="action-item account">
+                    <span class="user-icon">👤</span>
+                    <span>Acesse sua conta</span>
+                    <span class="heart-icon">♥️</span>
+                </div>
+                <div class="action-item cart">
+                    <span class="cart-icon">🛒</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="container">
+            <div class="nav-item departamentos">
+                <span class="icon">☰</span>
+                <span>Departamentos</span>
+            </div>
+            <div class="nav-links">
+                <a href="telefonia.html">Telefonia</a>
+                <a href="#">Eletrodomésticos</a>
+                <a href="#">Tvs e Vídeo</a>
+                <a href="#">Móveis</a>
+                <a href="#">Eletroportáteis</a>
+                <a href="#">Informática</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Carnê Digital</a>
+                <a href="#">Cartão Casas Bahia</a>
+                <a href="#">Serviços</a>
+                <a href="#">Banqi</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="form-container">
+            <a href="carrinho.html" class="voltar-link">← Voltar</a>
+            
+            <h1 class="page-title">Identificação</h1>
+        
+        <form id="formulario-endereco" onsubmit="salvarDados(event)">
+            <h2 class="section-title">Dados de Entrega</h2>
+            
+            <div class="form-group">
+                <label class="form-label">Nome completo *</label>
+                <input type="text" id="nome" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">CEP *</label>
+                <input type="text" id="cep" class="form-input" placeholder="00000-000" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Endereço *</label>
+                <input type="text" id="endereco" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Número *</label>
+                <input type="text" id="numero" class="form-input" required>
+            </div>
+            
+            <button type="submit" class="btn-continuar active">Continuar</button>
+        </form>
+    </div>
+    </div>
+    
+    <script>
+        function salvarDados(event) {
+            event.preventDefault();
+            
+            const dados = {
+                nome: document.getElementById('nome').value,
+                cep: document.getElementById('cep').value,
+                endereco: document.getElementById('endereco').value,
+                numero: document.getElementById('numero').value
+            };
+            
+            localStorage.setItem('dadosEntrega', JSON.stringify(dados));
+            
+            alert('Dados salvos com sucesso!');
+            
+            window.location.href = 'verificacao.html';
+        }
+    </script>
+</body>
+</html>

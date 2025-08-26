@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação - Casas Bahia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .checkout-header {
+            background: #0033C6;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .checkout-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .casas {
+            color: white;
+        }
+        
+        .bahia {
+            color: #ff6600;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .endereco-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .section-title {
+            color: #0033C6;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .endereco-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .endereco-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .endereco-principal {
+            color: #ff9900;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .novo-endereco {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .endereco-nome {
+            color: #0033C6;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .endereco-detalhes {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .escolher-outro {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .entrega-section {
+            margin-top: 30px;
+        }
+        
+        .entrega-title {
+            color: #0033C6;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .entrega-opcao {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .entrega-opcao.selected {
+            border-color: #0033C6;
+            background: #f8f9ff;
+        }
+        
+        .entrega-radio {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .entrega-info {
+            flex: 1;
+        }
+        
+        .entrega-tipo {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .entrega-data {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .entrega-preco {
+            color: #00aa00;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .regras-link {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+        }
+        
+        .resumo-pedido {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            height: fit-content;
+        }
+        
+        .resumo-title {
+            color: #0033C6;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .produto-resumo {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .produto-imagem {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        .produto-info {
+            flex: 1;
+        }
+        
+        .produto-nome {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .vendido-por {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .vendido-link {
+            color: #0033C6;
+            text-decoration: none;
+        }
+        
+        .entrega-info-resumo {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .entrega-gratis {
+            color: #00aa00;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .remover-link {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .produto-preco {
+            text-align: right;
+        }
+        
+        .quantidade-select {
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .preco-original {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+        
+        .preco-atual {
+            color: #0033C6;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .preco-pix {
+            color: #0033C6;
+            font-size: 12px;
+        }
+        
+        .resumo-valores {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        
+        .resumo-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .resumo-label {
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .resumo-valor {
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .total-section {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .total-original {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+        
+        .total-atual {
+            color: #0033C6;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .total-pix {
+            color: #0033C6;
+            font-size: 14px;
+        }
+        
+        .aviso-preco {
+            color: #666;
+            font-size: 12px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .btn-pagamento {
+            background: #00aa00;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .btn-pagamento:hover {
+            background: #009900;
+        }
+        
+        .footer-info {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 40px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .checkout-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .endereco-card {
+                padding: 15px;
+            }
+            
+            .entrega-opcao {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .produto-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 20px 10px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .endereco-section {
+                padding: 15px;
+            }
+            
+            .header-links {
+                gap: 15px;
+            }
+            
+            .header-link {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="checkout-header">
+        <div class="container">
+            <div class="logo">
+                <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
+            </div>
+            <div class="header-links">
+                <a href="#" class="header-link">
+                    <span>💬</span>
+                    <span>Central de atendimento</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>📦</span>
+                    <span>Meus Pedidos</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>🔤</span>
+                    <span>Tradutor para Libras</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>🔒</span>
+                    <span>Ambiente 100% seguro</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="endereco-section">
+            <h2 class="section-title">Endereço de entrega</h2>
+            
+            <div class="endereco-card">
+                <div class="endereco-header">
+                    <div class="endereco-principal">
+                        ⭐ Endereço principal
+                    </div>
+                    <a href="#" class="novo-endereco">
+                        📍 Novo endereço
+                    </a>
+                </div>
+                
+                <div class="endereco-nome" id="endereco-nome">Nathan Enrico</div>
+                <div class="endereco-detalhes" id="endereco-detalhes">
+                    Rua das Margaridas, 375<br>
+                    Nova Cerejeira, Atibaia - SP<br>
+                    CEP: 12950-660
+                </div>
+                <a href="#" class="escolher-outro">Escolher outro endereço</a>
+            </div>
+
+            <div class="entrega-section">
+                <h3 class="entrega-title">Escolha a entrega</h3>
+                
+                <div class="entrega-opcao selected">
+                    <input type="radio" name="entrega" class="entrega-radio" checked>
+                    <div class="entrega-info">
+                        <div class="entrega-tipo">Normal</div>
+                        <div class="entrega-data">quinta, 28 de agosto</div>
+                    </div>
+                    <div class="entrega-preco">Grátis</div>
+                </div>
+                
+                <a href="#" class="regras-link">Regras de entrega</a>
+                
+                <div class="entrega-opcao">
+                    <input type="radio" name="entrega" class="entrega-radio">
+                    <div class="entrega-info">
+                        <div class="entrega-tipo">Agendada</div>
+                        <div class="entrega-data">21 de novembro, sexta</div>
+                    </div>
+                    <div class="entrega-preco">Grátis</div>
+                </div>
+                
+                <div class="entrega-opcao">
+                    <input type="radio" name="entrega" class="entrega-radio">
+                    <div class="entrega-info">
+                        <div class="entrega-tipo">Retira Rápido</div>
+                        <div class="entrega-data">Retirar em 2h</div>
+                    </div>
+                    <div class="entrega-preco">Grátis</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resumo-pedido">
+            <h3 class="resumo-title">Resumo do pedido</h3>
+            
+            <div class="produto-resumo">
+                <img src="./checkout A6/1g.avif" alt="Samsung Galaxy A06" class="produto-imagem">
+                <div class="produto-info">
+                    <div class="produto-nome">1x Smartphone Samsung Galaxy A06 Azul Escuro 4G 128GB 4GB RAM Tela 6,7"...</div>
+                    <div class="vendido-por">Vendido e entregue por <a href="#" class="vendido-link">Casas Bahia</a></div>
+                    <div class="entrega-info-resumo">até <strong>quinta, 28 de agosto:</strong></div>
+                    <div class="entrega-gratis">Grátis</div>
+                    <a href="#" class="remover-link">Remover</a>
+                </div>
+                <div class="produto-preco">
+                    <select class="quantidade-select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <div class="preco-original">R$ 976,56</div>
+                    <div class="preco-atual">R$ 397,99</div>
+                    <div class="preco-pix">à vista no Pix</div>
+                </div>
+            </div>
+            
+            <div class="resumo-valores">
+                <div class="resumo-item">
+                    <span class="resumo-label">01 Produto</span>
+                    <span class="resumo-valor">R$ 397,99</span>
+                </div>
+                
+                <div class="resumo-item">
+                    <span class="resumo-label">Entrega</span>
+                    <span class="resumo-valor" style="color: #00aa00;">Grátis</span>
+                </div>
+                
+                <div class="total-section">
+                    <div class="resumo-item">
+                        <span class="resumo-label">Total</span>
+                        <div>
+                            <div class="total-original">R$ 976,56</div>
+                            <div class="total-atual">ou R$ 397,99</div>
+                            <div class="total-pix">à vista no Pix</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="aviso-preco">Valor sujeito à alteração conforme opção de pagamento</div>
+                
+                <button class="btn-pagamento" onclick="window.location.href='pagamento.html'">Ir para pagamento</button>
+            </div>
+        </div>
+        
+        <div class="footer-info">
+            Grupo Casas Bahia S.A. | www.casasbahia.com.br | Rua Florida, 1970 | São Paulo - SP | CEP: 04565-001 |<br>
+            CNPJ: 33.041.260/0652-90 | Inscrição Estadual: 133.091.229.115
+        </div>
+    </main>
+    
+    <script>
+        // Carregar dados salvos do localStorage
+        window.onload = function() {
+            const dadosSalvos = localStorage.getItem('dadosEntrega');
+            if (dadosSalvos) {
+                const dados = JSON.parse(dadosSalvos);
+                
+                document.getElementById('endereco-nome').textContent = dados.nome;
+                document.getElementById('endereco-detalhes').innerHTML = 
+                    `${dados.endereco}, ${dados.numero}<br>CEP: ${dados.cep}`;
+            }
+        };
+        
+        // Funcionalidade dos radio buttons
+        document.querySelectorAll('.entrega-opcao').forEach(opcao => {
+            opcao.addEventListener('click', function() {
+                document.querySelectorAll('.entrega-opcao').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+    </script>
+</body>
+</html>

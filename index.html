@@ -1,0 +1,1724 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas Bahia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-enhancements.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- LG Banner -->
+    <div class="lg-banner">
+        <img src="/imagens/Lg-master-1920x35.png" alt="LG Banner">
+    </div>
+
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
+                <div class="accessibility">
+                    <span class="accessibility-icon">♿</span>
+                    <span class="accessibility-text">Acessibilidade</span>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" placeholder="O que você tá procurando?" class="search-input">
+                <button class="search-btn" onclick="toggleSearch()">🔍</button>
+                <div class="search-dropdown" id="searchDropdown">
+                    <div class="search-suggestions">
+                        <h4>Termos mais buscados</h4>
+                        <div class="suggestion-item">
+                            <span class="suggestion-number">1</span>
+                            <span class="suggestion-text">Smartphones</span>
+                        </div>
+                        <div class="suggestion-item">
+                            <span class="suggestion-number">2</span>
+                            <span class="suggestion-text">Televisores</span>
+                        </div>
+                        <div class="suggestion-item">
+                            <span class="suggestion-number">3</span>
+                            <span class="suggestion-text">Refrigeradores</span>
+                        </div>
+                        <div class="suggestion-item">
+                            <span class="suggestion-number">4</span>
+                            <span class="suggestion-text">Notebook</span>
+                        </div>
+                        <div class="suggestion-item">
+                            <span class="suggestion-number">5</span>
+                            <span class="suggestion-text">Lavadoras</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="action-item cep" onclick="toggleCepModal()">
+                    <span class="truck-icon">🚚</span>
+                    <span id="cepText">Informe seu CEP</span>
+                </div>
+                <div class="action-item account">
+                    <span class="user-icon">👤</span>
+                    <span>Acesse sua conta</span>
+                    <span class="heart-icon">♥️</span>
+                    <div class="account-dropdown">
+                        <button class="login-btn" onclick="abrirIdentificacao()">Entre ou Cadastre-se</button>
+                        <div class="menu-item">Pedidos de Loja On-Line</div>
+                        <div class="menu-item">Pedidos de Loja Física</div>
+                        <div class="menu-item">Atendimento</div>
+                    </div>
+                </div>
+                <div class="action-item cart">
+                    <span class="cart-icon">🛒</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="container">
+            <div class="nav-item departamentos" onclick="toggleDepartamentos()">
+                <span class="icon">☰</span>
+                <span>Departamentos</span>
+                <div class="departamentos-dropdown" id="departamentosDropdown">
+                    <a href="telefonia.html" class="departamentos-item">
+                        <span class="departamentos-icon">📱</span>
+                        <span class="departamentos-text">Telefonia</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">🏠</span>
+                        <span class="departamentos-text">Eletrodomésticos</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">📺</span>
+                        <span class="departamentos-text">TVs e Vídeo</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">🪑</span>
+                        <span class="departamentos-text">Móveis</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">⚡</span>
+                        <span class="departamentos-text">Eletroportáteis</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">💻</span>
+                        <span class="departamentos-text">Informática</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">❄️</span>
+                        <span class="departamentos-text">Ar e Ventilação</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">🚗</span>
+                        <span class="departamentos-text">Automotivo</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">💄</span>
+                        <span class="departamentos-text">Beleza e Saúde</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">🏃</span>
+                        <span class="departamentos-text">Esporte e Lazer</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">🎮</span>
+                        <span class="departamentos-text">Games</span>
+                    </a>
+                    <a href="#" class="departamentos-item">
+                        <span class="departamentos-icon">🔧</span>
+                        <span class="departamentos-text">Ferramentas</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="telefonia.html">Telefonia</a>
+                <a href="#">Eletrodomésticos</a>
+                <a href="#">Tvs e Vídeo</a>
+                <a href="#">Móveis</a>
+                <a href="#">Eletroportáteis</a>
+                <a href="#">Informática</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Carnê Digital</a>
+                <a href="#">Cartão Casas Bahia</a>
+                <a href="#">Serviços</a>
+                <a href="#">Banqi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <button class="nav-arrow left" onclick="previousPage()">‹</button>
+            <div class="categories-grid" id="categoriesGrid">
+                <div class="category-item">
+                    <div class="category-icon samsung">
+                        <div class="samsung-text">SAMSUNG<br>Galaxy</div>
+                    </div>
+                    <span>Samsung Galaxy</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon cupom-desc">
+                        <div class="cupom-symbol">🎫</div>
+                    </div>
+                    <span>Cupom: DESCONTAO</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon eletro">
+                        <img src="./imagens/geladeira.avif" alt="Eletrodomésticos">
+                    </div>
+                    <span>Eletrodomésticos</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon smartphone">
+                        <img src="./imagens/celular.webp" alt="Smartphones">
+                    </div>
+                    <span>Smartphones</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon iphone">
+                        <img src="./imagens/iphone.avif" alt="iPhone">
+                    </div>
+                    <span>iPhone</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon moveis">
+                        <img src="./imagens/moveis.avif" alt="Móveis">
+                    </div>
+                    <span>Móveis</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon tv">
+                        <img src="./imagens/tv.avif" alt="TV's">
+                    </div>
+                    <span>TV's</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon informatica">
+                        <img src="./imagens/informatica.avif" alt="Informática">
+                    </div>
+                    <span>Informática</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon eletroportateis">
+                        <img src="./imagens/eletroportaveis.avif" alt="Eletroportáteis">
+                    </div>
+                    <span>Eletroportáteis</span>
+                </div>
+                <!-- Segunda página do carrossel -->
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon ar">
+                        <img src="./imagens/ventilacao.avif" alt="Ar E Ventilação">
+                    </div>
+                    <span>Ar E Ventilação</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon automotivo">
+                        <img src="./imagens/automotivo.avif" alt="Automotivo">
+                    </div>
+                    <span>Automotivo</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon beleza">
+                        <img src="./imagens/beleza.avif" alt="Beleza E Saúde">
+                    </div>
+                    <span>Beleza E Saúde</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon utilidades">
+                        <img src="./imagens/utilidades.avif" alt="Utilidades">
+                    </div>
+                    <span>Utilidades</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon esporte">
+                        <img src="./imagens/esportes.avif" alt="Esporte">
+                    </div>
+                    <span>Esporte</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon games">
+                        <img src="./imagens/games.avif" alt="Games">
+                    </div>
+                    <span>Games</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon lg">
+                        <div class="lg-text">LG</div>
+                    </div>
+                    <span>LG</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon ferramentas">
+                        <img src="./imagens/ferramentas.avif" alt="Ferramentas">
+                    </div>
+                    <span>Ferramentas</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon entrega">
+                        <img src="./imagens/entrega.avif" alt="Entrega Rápida">
+                    </div>
+                    <span>Entrega Rápida</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon beleza">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZmY1ZjAiIHJ4PSI0Ii8+PHJlY3QgeD0iMTUiIHk9IjEwIiB3aWR0aD0iMTAiIGhlaWdodD0iMjAiIGZpbGw9IiNmZjk5MDAiIHJ4PSIyIi8+PC9zdmc+" alt="Beleza E Saúde">
+                    </div>
+                    <span>Beleza E Saúde</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon utilidades">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmMGYwZjAiIHJ4PSI0Ii8+PHJlY3QgeD0iMTIiIHk9IjEyIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiM2NjYiIHJ4PSIyIi8+PC9zdmc+" alt="Utilidades">
+                    </div>
+                    <span>Utilidades</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon esporte">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmMGZmZjAiIHJ4PSI0Ii8+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMTAiIGZpbGw9IiMwMGRkMDAiLz48L3N2Zz4=" alt="Esporte">
+                    </div>
+                    <span>Esporte</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon games">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmMGYwZjAiIHJ4PSI0Ii8+PHJlY3QgeD0iOCIgeT0iMTQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxMiIgZmlsbD0iIzMzMyIgcng9IjQiLz48L3N2Zz4=" alt="Games">
+                    </div>
+                    <span>Games</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon lg">
+                        <div class="lg-text">LG</div>
+                    </div>
+                    <span>LG</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon ferramentas">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZmY1ZTYiIHJ4PSI0Ii8+PHJlY3QgeD0iMTAiIHk9IjE1IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZjk5MDAiIHJ4PSIyIi8+PC9zdmc+" alt="Ferramentas">
+                    </div>
+                    <span>Ferramentas</span>
+                </div>
+                <div class="category-item" style="display: none;">
+                    <div class="category-icon entrega">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNlNmY3ZmYiIHJ4PSI0Ii8+PHJlY3QgeD0iMTAiIHk9IjE1IiB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIGZpbGw9IiMwMDc3ZGQiIHJ4PSIyIi8+PC9zdmc+" alt="Entrega Rápida">
+                    </div>
+                    <span>Entrega Rápida</span>
+                </div>
+            </div>
+            <button class="nav-arrow right" onclick="nextPage()">›</button>
+        </div>
+    </section>
+
+    <!-- Banner Carousel - Updated -->
+    <section class="banner-carousel">
+        <div class="carousel-wrapper">
+            <button class="carousel-nav left" onclick="prevBanner()">‹</button>
+            <div class="banner-slides" id="bannerSlides">
+                <div class="banner-slide active">
+                    <img src="./imagem-carrosel/banner-1.avif" alt="Banner 1">
+                </div>
+                <div class="banner-slide">
+                    <img src="./imagem-carrosel/banners-2.avif" alt="Banner 2">
+                </div>
+                <div class="banner-slide">
+                    <img src="./imagem-carrosel/banners-3.avif" alt="Banner 3">
+                </div>
+                <div class="banner-slide">
+                    <img src="./imagem-carrosel/banners-4.avif" alt="Banner 4">
+                </div>
+                <div class="banner-slide">
+                    <img src="./imagem-carrosel/abnners-5.avif" alt="Banner 5">
+                </div>
+            </div>
+            <button class="carousel-nav right" onclick="nextBanner()">›</button>
+        </div>
+        <div class="banner-dots">
+            <span class="banner-dot active" onclick="currentBanner(1)"></span>
+            <span class="banner-dot" onclick="currentBanner(2)"></span>
+            <span class="banner-dot" onclick="currentBanner(3)"></span>
+            <span class="banner-dot" onclick="currentBanner(4)"></span>
+            <span class="banner-dot" onclick="currentBanner(5)"></span>
+        </div>
+    </section>
+
+    <!-- JOVI V50 5G Section -->
+    <section class="jovi-section">
+        <div class="container">
+            <div class="jovi-content">
+                <div class="jovi-banner">
+                    <img src="./imagens/jovi.png" alt="JOVI V50 5G" class="jovi-banner-img">
+                </div>
+                <div class="jovi-products">
+                    <div class="jovi-product-card">
+                        <img src="./imagem jovi.jpeg" alt="Smartphone JOVI V50 5G Vermelho">
+                        <div class="product-info">
+                            <h4>Smartphone JOVI V50 5G Vermelh...</h4>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(0)</span>
+                            </div>
+                            <div class="price-info">
+                                <span class="price">R$ 4.499,10</span>
+                                <span class="installment">No Pix</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jovi-product-card">
+                        <img src="./imagem jovi.jpeg" alt="Smartphone JOVI V50 5G Preto">
+                        <div class="product-info">
+                            <h4>Smartphone JOVI V50 5G Preto...</h4>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(0)</span>
+                            </div>
+                            <div class="price-info">
+                                <span class="price">R$ 4.499,10</span>
+                                <span class="installment">No Pix</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas Relâmpago Section -->
+    <section class="ofertas-relampago">
+        <div class="container">
+            <div class="ofertas-header">
+                <h2>Ofertas Relâmpago ⚡</h2>
+                <div class="countdown">
+                    <span class="countdown-text">As ofertas se encerram em:</span>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="time-number">19</span>
+                            <span class="time-label">HORAS</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number">43</span>
+                            <span class="time-label">MIN</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number">14</span>
+                            <span class="time-label">SEG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ofertas-products">
+                <div class="oferta-card">
+                    <img src="./imagens/moveis.avif" alt="Guarda-Roupa">
+                    <div class="product-details">
+                        <h4>Guarda-Roupa Bartira Diplomata com 7 Portas e 6 Gavetas - 255,6cm de largura</h4>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(1147)</span>
+                        </div>
+                        <div class="price">R$ 1.558,80</div>
+                    </div>
+                </div>
+                <div class="oferta-card">
+                    <img src="./imagens/iphone.avif" alt="iPhone 15">
+                    <div class="product-details">
+                        <h4>Apple iPhone 15 256GB - Preto</h4>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(122)</span>
+                        </div>
+                        <div class="price">R$ 4.769,10</div>
+                        <div class="exclusive">Exclusivo Pix</div>
+                    </div>
+                </div>
+                <div class="oferta-card">
+                    <img src="./imagens/eletroportaveis.avif" alt="Fritadeira">
+                    <div class="product-details">
+                        <h4>Fritadeira Elétrica Air Fryer Britânia 1500W Sem Óleo BFR25P 3,5L - Preta</h4>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(4032)</span>
+                        </div>
+                        <div class="price">R$ 219,90</div>
+                        <div class="exclusive">Exclusivo Pix</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saldão de Ofertas Section -->
+    <section class="saldao-ofertas">
+        <div class="container">
+            <h2>Saldão de Ofertas</h2>
+            <div class="ofertas-grid" id="ofertasGrid">
+                <div class="produto-card">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/celular.webp" alt="Smartphone Motorola">
+                    <h4>Smartphone Motorola Moto g35 5G Grafite 128GB, 4G...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(340)</span>
+                    </div>
+                    <div class="price-old">R$ 1.318,78</div>
+                    <div class="discount-badge">Baixou 17%</div>
+                    <div class="installment-info">R$ 1.099,00 ou em até 10x de R$ 109,90 sem juros ou</div>
+                    <div class="price-main">R$ 989,10</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">FRETE GRÁTIS</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/eletroportaveis.avif" alt="Fritadeira">
+                    <h4>Fritadeira Elétrica Sem Óleo Air Fryer Mondial Family...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(12370)</span>
+                    </div>
+                    <div class="price-old">R$ 348,00</div>
+                    <div class="discount-badge">Baixou 14%</div>
+                    <div class="installment-info">R$ 299,00 ou em até 6x de R$ 49,83 sem juros ou</div>
+                    <div class="price-main">R$ 299,00</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">RETIRAR RÁPIDO</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge oferta">OFERTA IMPERDÍVEL</div>
+                    <img src="./imagens/geladeira.avif" alt="Geladeira">
+                    <h4>Geladeira Brastemp BRM44HK Frost Free...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(7788)</span>
+                    </div>
+                    <div class="price-old">R$ 3.776,67</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 3.194,84 ou em até 12x de R$ 266,24 sem juros ou</div>
+                    <div class="price-main">R$ 3.098,99</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/celular.webp" alt="Samsung Galaxy">
+                    <h4>Smartphone Samsung Galaxy A16 5G Azul Escur...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(108)</span>
+                    </div>
+                    <div class="price-old">R$ 1.648,78</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 1.398,89 ou em até 10x de R$ 139,89 sem juros ou</div>
+                    <div class="price-main">R$ 1.259,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/moveis.avif" alt="Guarda-Roupa">
+                    <h4>Guarda-Roupa Bartira Ilusão com Cabideiro, 6...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(468)</span>
+                    </div>
+                    <div class="price-old">R$ 799,00</div>
+                    <div class="installment-info">R$ 799,00 ou em até 10x de R$ 79,90 sem juros ou</div>
+                    <div class="price-main">R$ 719,10</div>
+                    <div class="payment-method">Exclusivo cartão próprio.</div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/eletroportaveis.avif" alt="Secador">
+                    <h4>Secador de Cabelos Philco PSC3050 com Ion...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(141)</span>
+                    </div>
+                    <div class="price-old">R$ 135,45</div>
+                    <div class="discount-badge">Baixou 19%</div>
+                    <div class="installment-info">R$ 109,90 ou em até 2x de R$ 54,95 sem juros ou</div>
+                    <div class="price-main">R$ 109,90</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">CONFIRA AS REGRAS</button>
+                        <button class="btn-frete">RETIRA RÁPIDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge mais-barato">MAIS BARATO NO APP</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Liquidificador">
+                    <h4>Liquidificador Britânia Diamante 800 Vermelho...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(1234)</span>
+                    </div>
+                    <div class="price-old">R$ 123,12</div>
+                    <div class="discount-badge">Baixou 18%</div>
+                    <div class="installment-info">R$ 99,90 ou em até 2x de R$ 49,95 sem juros ou</div>
+                    <div class="price-main">R$ 99,90</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">RETIRA RÁPIDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/utilidades.avif" alt="Panela">
+                    <h4>Panela de Pressão Panelux Alumínio Polido - 10 LT</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(31)</span>
+                    </div>
+                    <div class="price-old">R$ 257,90</div>
+                    <div class="discount-badge">Baixou 34%</div>
+                    <div class="installment-info">R$ 169,90 ou em até 3x de R$ 56,63 sem juros ou</div>
+                    <div class="price-main">R$ 169,90</div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/utilidades.avif" alt="Travessas">
+                    <h4>Conjunto de Travessas Refratárias Marinex em...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(2021)</span>
+                    </div>
+                    <div class="price-old">R$ 139,90</div>
+                    <div class="discount-badge">Baixou 14%</div>
+                    <div class="installment-info">R$ 119,90 ou em até 2x de R$ 59,95 sem juros ou</div>
+                    <div class="price-main">R$ 119,90</div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/utilidades.avif" alt="Faqueiro">
+                    <h4>Faqueiro 12 Peças Tramontina Leme com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(89)</span>
+                    </div>
+                    <div class="price-old">R$ 24,90</div>
+                    <div class="discount-badge">Baixou 8%</div>
+                    <div class="installment-info">R$ 22,90 ou em até 2x de R$ 11,79 com juros (1,99% a.m)</div>
+                    <div class="price-main">R$ 22,90</div>
+                </div>
+            </div>
+            <button class="seta-mais" onclick="toggleOfertas()" id="setaMais">
+                ›
+            </button>
+        </div>
+    </section>
+
+    <!-- 72 horas de ofertas brastemp Section -->
+    <section class="brastemp-ofertas">
+        <div class="container">
+            <h2>72 horas de ofertas brastemp</h2>
+            <div class="brastemp-grid">
+                <div class="brastemp-card large">
+                    <img src="./imagem oferta/mosaico_1.avif" alt="72 HORAS DE OFERTAS">
+                </div>
+                <div class="brastemp-card medium">
+                    <img src="./imagem oferta/mosaico_2.avif" alt="Corra, que o tempo está acabando!">
+                </div>
+                <div class="brastemp-card small top">
+                    <img src="./imagem oferta/mosaico_3.avif" alt="Geladeiras Brastemp">
+                </div>
+                <div class="brastemp-card small bottom">
+                    <img src="./imagem oferta/mosaico_4.avif" alt="Lava-louças Brastemp">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indicados com base nas suas visitas Section -->
+    <section class="indicados-visitas">
+        <div class="container">
+            <h2>Indicados com base nas suas visitas</h2>
+            <div class="indicados-grid" id="indicadosGrid">
+                <div class="produto-card">
+                    <div class="produto-badge patrocinado">Patrocinado</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Lavadora">
+                    <h4>Lavadora de Roupas Brastemp BWK13AB com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(4591)</span>
+                    </div>
+                    <div class="price-old">R$ 2.430,42</div>
+                    <div class="discount-badge">Baixou 13%</div>
+                    <div class="installment-info">R$ 2.110,00 ou em até 10x de R$ 211,00 sem juros ou</div>
+                    <div class="price-main">R$ 1.899,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge patrocinado">Patrocinado</div>
+                    <img src="./imagens/iphone.avif" alt="iPhone">
+                    <h4>Apple iPhone 15 Pro Max 512GB - Titânio Natural</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(11)</span>
+                    </div>
+                    <div class="price-old">R$ 13.440,00</div>
+                    <div class="installment-info">R$ 13.440,00 ou em até 10x de R$ 1.344,00 sem juros ou</div>
+                    <div class="price-main">R$ 12.096,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">FRETE GRÁTIS</button>
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/geladeira.avif" alt="Geladeira">
+                    <h4>Geladeira Consul Duplex CRM44AB Frost Free 386L...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(5410)</span>
+                    </div>
+                    <div class="price-old">R$ 3.472,53</div>
+                    <div class="discount-badge">Baixou 13%</div>
+                    <div class="installment-info">R$ 3.032,22 ou em até 12x de R$ 252,68 sem juros ou</div>
+                    <div class="price-main">R$ 2.729,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/tv.avif" alt="Smart TV">
+                    <h4>Smart TV 50" 4K Ultra HD Samsung 50DU7700 com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(2753)</span>
+                    </div>
+                    <div class="price-old">R$ 3.078,90</div>
+                    <div class="discount-badge">Baixou 22%</div>
+                    <div class="installment-info">R$ 2.398,00 ou em até 10x de R$ 239,80 sem juros ou</div>
+                    <div class="price-main">R$ 2.230,14</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                        <button class="btn-frete">FRETE GRÁTIS</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/games.avif" alt="PlayStation">
+                    <h4>PlayStation®5 Slim Digital - Pacote ASTRO BOT e Gran...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(2)</span>
+                    </div>
+                    <div class="price-old">R$ 3.999,90</div>
+                    <div class="installment-info">R$ 3.999,90 ou em até 12x de R$ 333,32 sem juros ou</div>
+                    <div class="price-main">R$ 3.719,91</div>
+                    <div class="payment-method">no PIX</div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/tv.avif" alt="Smart TV Philips">
+                    <h4>Smart TV LED 50" Ultra HD 4K Philips 50PUG7019 com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(908)</span>
+                    </div>
+                    <div class="price-old">R$ 2.399,00</div>
+                    <div class="discount-badge">Baixou 19%</div>
+                    <div class="installment-info">R$ 1.946,32 ou em até 10x de R$ 194,63 sem juros ou</div>
+                    <div class="price-main">R$ 1.849,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge oferta">OFERTA IMPERDÍVEL</div>
+                    <img src="./imagens/geladeira.avif" alt="Geladeira Brastemp">
+                    <h4>Geladeira Brastemp BRM44HK Frost Free Duplex...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(7788)</span>
+                    </div>
+                    <div class="price-old">R$ 3.776,67</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 3.194,84 ou em até 12x de R$ 266,24 sem juros ou</div>
+                    <div class="price-main">R$ 3.098,99</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/moveis.avif" alt="Guarda-Roupa">
+                    <h4>Guarda-Roupa Bartira Ville com 6 Portas e 2 Gavetas -...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(3002)</span>
+                    </div>
+                    <div class="price-old">R$ 1.049,00</div>
+                    <div class="discount-badge">Baixou 14%</div>
+                    <div class="installment-info">R$ 899,00 ou em até 10x de R$ 89,90 sem juros ou</div>
+                    <div class="price-main">R$ 809,10</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/celular.webp" alt="Smartphone Motorola">
+                    <h4>Smartphone Motorola Moto g05 Cinza Vegan Leather...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(200)</span>
+                    </div>
+                    <div class="price-old">R$ 863,33</div>
+                    <div class="discount-badge">Baixou 10%</div>
+                    <div class="installment-info">R$ 777,00 ou em até 10x de R$ 77,70 sem juros ou</div>
+                    <div class="price-main">R$ 699,30</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/celular.webp" alt="Samsung Galaxy">
+                    <h4>Smartphone Samsung Galaxy A06 Branco 4G 128GB 4GB...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(959)</span>
+                    </div>
+                    <div class="price-old">R$ 933,90</div>
+                    <div class="discount-badge">Baixou 23%</div>
+                    <div class="installment-info">R$ 721,00 ou em até 10x de R$ 72,10 sem juros ou</div>
+                    <div class="price-main">R$ 648,90</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+            </div>
+            <button class="seta-mais" onclick="toggleIndicados()" id="setaIndicados">
+                ›
+            </button>
+        </div>
+    </section>
+
+
+
+    <!-- Tudo em tecnologia pelo menor preço Section -->
+    <section class="tecnologia-menor-preco">
+        <div class="container">
+            <h2>Tudo em tecnologia pelo menor preço</h2>
+            <div class="tecnologia-grid" id="tecnologiaGrid">
+                <div class="produto-card">
+                    <img src="./imagens/tv.avif" alt="Samsung TV">
+                    <h4>Samsung Combo Smart TV 50" Crystal UHD 4K U8100F...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 3.199,00</div>
+                    <div class="discount-badge">Baixou 9%</div>
+                    <div class="installment-info">R$ 2.999,00 ou em até 10x de R$ 299,90 sem juros ou</div>
+                    <div class="price-main">R$ 2.699,10</div>
+                    <div class="payment-method">no PIX</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/tv.avif" alt="Smart TV SEMP">
+                    <h4>Smart TV 43" LED FHD SEMP R6610 com sistema...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(702)</span>
+                    </div>
+                    <div class="price-old">R$ 1.799,99</div>
+                    <div class="discount-badge">Baixou 19%</div>
+                    <div class="installment-info">R$ 1.441,05 ou em até 9x de R$ 160,12 sem juros ou</div>
+                    <div class="price-main">R$ 1.369,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">RETIRAR - GRÁTIS HOJE</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/tv.avif" alt="Smart TV OLED">
+                    <h4>Smart TV OLED 43 Full HD Multi Série Experience...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(7)</span>
+                    </div>
+                    <div class="price-old">R$ 1.649,00</div>
+                    <div class="discount-badge">Baixou 27%</div>
+                    <div class="installment-info">R$ 1.199,00 ou em até 10x de R$ 119,90 sem juros ou</div>
+                    <div class="price-main">R$ 1.199,00</div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/tv.avif" alt="Samsung TV 58">
+                    <h4>Smart TV 58 Polegadas Samsung U8500F Crystal...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 3.499,00</div>
+                    <div class="discount-badge">Baixou 9%</div>
+                    <div class="installment-info">R$ 3.086,10 ou em até 10x de R$ 308,61 sem juros ou</div>
+                    <div class="price-main">R$ 2.777,49</div>
+                    <div class="payment-method">no PIX</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/iphone.avif" alt="Apple iPhone">
+                    <h4>Apple iPhone 15 128GB - Preto</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(526)</span>
+                    </div>
+                    <div class="price-old">R$ 5.375,36</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 4.549,00 ou em até 10x de R$ 454,90 sem juros ou</div>
+                    <div class="price-main">R$ 4.412,53</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/iphone.avif" alt="Apple iPhone 15 128GB">
+                    <h4>Apple iPhone 15 128GB - Preto</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(526)</span>
+                    </div>
+                    <div class="price-old">R$ 5.376,56</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 4.549,00 ou em até 10x de R$ 454,90 sem juros ou</div>
+                    <div class="price-main">R$ 4.412,53</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">SAI E SUDESTE</button>
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/iphone.avif" alt="iPhone 16 Apple">
+                    <h4>iPhone 16 Apple (128GB) Preto, Tela de 6,1&quot; 5G...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 7.051,68</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 5.994,49 ou em até 10x de R$ 599,45 sem juros ou</div>
+                    <div class="price-main">R$ 5.994,49</div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/iphone.avif" alt="Apple iPhone 16 Branco">
+                    <h4>Apple iPhone 16 de 128GB - Branco</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(17)</span>
+                    </div>
+                    <div class="price-old">R$ 5.374,24</div>
+                    <div class="discount-badge">Baixou 18%</div>
+                    <div class="installment-info">R$ 4.430,68 ou em até 10x de R$ 443,07 sem juros ou</div>
+                    <div class="price-main">R$ 3.899,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/iphone.avif" alt="Apple iPhone 15 256GB">
+                    <h4>Apple iPhone 15 256GB - Preto</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(122)</span>
+                    </div>
+                    <div class="price-old">R$ 5.907,86</div>
+                    <div class="discount-badge">Baixou 12%</div>
+                    <div class="installment-info">R$ 5.299,00 ou em até 10x de R$ 529,90 sem juros ou</div>
+                    <div class="price-main">R$ 4.769,10</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">SAI E SUDESTE</button>
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/iphone.avif" alt="Apple iPhone 14 128GB">
+                    <h4>Apple iPhone 14 128GB Meia-noite</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(1112)</span>
+                    </div>
+                    <div class="price-old">R$ 4.884,00</div>
+                    <div class="discount-badge">Baixou 18%</div>
+                    <div class="installment-info">R$ 3.999,00 ou em até 10x de R$ 399,90 sem juros ou</div>
+                    <div class="price-main">R$ 3.879,03</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">SAI E SUDESTE</button>
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                    </div>
+                </div>
+            </div>
+            <button class="seta-mais" onclick="toggleTecnologia()" id="setaTecnologia">
+                ›
+            </button>
+        </div>
+    </section>
+
+    <!-- Ofertas em destaque para você Section -->
+    <section class="ofertas-destaque">
+        <div class="container">
+            <h2>Ofertas em destaque para você</h2>
+            <div class="destaque-grid">
+                <div class="produto-card">
+                    <img src="./imagens/eletroportaveis.avif" alt="Máquina de Lavar">
+                    <h4>Máquina de Lavar 15kg Electrolux LED15 Essential...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(2757)</span>
+                    </div>
+                    <div class="price-old">R$ 2.149,00</div>
+                    <div class="discount-badge">Baixou 7%</div>
+                    <div class="installment-info">R$ 1.999,00 ou em até 12x de R$ 166,58 sem juros ou</div>
+                    <div class="price-main">R$ 1.999,00</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/esportes.avif" alt="Esteira Eletrônica">
+                    <h4>Esteira Eletrônica Dream Fitness DR 2110 Dobrável...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(946)</span>
+                    </div>
+                    <div class="price-old">R$ 2.499,99</div>
+                    <div class="discount-badge">Baixou 20%</div>
+                    <div class="installment-info">R$ 1.999,90 ou em até 12x de R$ 166,66 sem juros ou</div>
+                    <div class="price-main">R$ 1.899,90</div>
+                    <div class="payment-method">no PIX</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge oferta">OFERTA IMPERDÍVEL</div>
+                    <img src="./imagens/utilidades.avif" alt="Jogo de Panelas">
+                    <h4>Jogo de Panelas Tramontina Turim Antiaderente Grafite ...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(778)</span>
+                    </div>
+                    <div class="price-old">R$ 619,43</div>
+                    <div class="discount-badge">Baixou 37%</div>
+                    <div class="installment-info">R$ 385,90 ou em até 10x de R$ 38,59 sem juros ou</div>
+                    <div class="price-main">R$ 385,90</div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/beleza.avif" alt="Escova Giratória">
+                    <h4>Escova Giratória Mondial Turbo Kit 5 Em 1 Profission...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(17)</span>
+                    </div>
+                    <div class="price-old">R$ 264,90</div>
+                    <div class="installment-info">R$ 264,90 ou em até 6x de R$ 44,15 sem juros ou</div>
+                    <div class="price-main">R$ 233,11</div>
+                    <div class="payment-method">no PIX</div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/eletroportaveis.avif" alt="Fritadeira Air Fryer">
+                    <h4>Fritadeira - Air Fryer AF-33 Maxis Preto</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(4)</span>
+                    </div>
+                    <div class="price-old">R$ 250,00</div>
+                    <div class="discount-badge">Baixou 20%</div>
+                    <div class="installment-info">R$ 199,90 ou em até 6x de R$ 33,32 sem juros ou</div>
+                    <div class="price-main">R$ 199,90</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas imperdíveis para a sua casa Section -->
+    <section class="ofertas-casa">
+        <div class="container">
+            <h2>Ofertas imperdíveis para a sua casa</h2>
+            <div class="casa-grid" id="casaGrid">
+                <div class="produto-card">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Fogão Atlas">
+                    <h4>Fogão Atlas 5 Bocas Mônaco Plus com Mesa de Inox e...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(768)</span>
+                    </div>
+                    <div class="price-old">R$ 1.128,60</div>
+                    <div class="discount-badge">Baixou 9%</div>
+                    <div class="installment-info">R$ 1.030,53 ou em até 8x de R$ 128,82 sem juros ou</div>
+                    <div class="price-main">R$ 979,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                    </div>
+                </div>
+                <div class="produto-card">
+                    <img src="./imagens/utilidades.avif" alt="Conjunto de Panelas">
+                    <h4>Conjunto de Panelas 10 Peças Tramontina Turim co...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(823)</span>
+                    </div>
+                    <div class="price-old">R$ 292,95</div>
+                    <div class="discount-badge">Baixou 5%</div>
+                    <div class="installment-info">R$ 279,00 ou em até 5x de R$ 55,80 sem juros ou</div>
+                    <div class="price-main">R$ 279,00</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Forno Elétrico">
+                    <h4>Forno Elétrico de Embutir Philco PFE47E Preto...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(7)</span>
+                    </div>
+                    <div class="price-old">R$ 1.374,00</div>
+                    <div class="discount-badge">Baixou 20%</div>
+                    <div class="installment-info">R$ 1.099,00 ou em até 10x de R$ 109,90 sem juros ou</div>
+                    <div class="price-main">R$ 1.099,00</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/geladeira.avif" alt="Frigobar Hisense">
+                    <h4>Frigobar Hisense 115 Litros Rr157nb Porta Reversível...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 1.389,00</div>
+                    <div class="discount-badge">Baixou 35%</div>
+                    <div class="installment-info">R$ 899,00 ou em até 6x de R$ 149,83 sem juros ou</div>
+                    <div class="price-main">R$ 899,00</div>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Fogão de Piso">
+                    <h4>Fogão de Piso Atlas 4 Bocas Monaco Acendimento...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(126)</span>
+                    </div>
+                    <div class="price-old">R$ 1.066,90</div>
+                    <div class="discount-badge">Baixou 18%</div>
+                    <div class="installment-info">R$ 873,90 ou em até 10x de R$ 87,39 sem juros ou</div>
+                    <div class="price-main">R$ 786,51</div>
+                    <div class="payment-method">no PIX</div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge cupom">CUPOM DESCONTÃO</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Microondas">
+                    <h4>Microondas Electrolux 20L Branco com Função...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(1245)</span>
+                    </div>
+                    <div class="price-old">R$ 599,00</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 509,15 ou em até 8x de R$ 63,64 sem juros ou</div>
+                    <div class="price-main">R$ 459,23</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                    </div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/utilidades.avif" alt="Jogo de Facas">
+                    <h4>Jogo de Facas Tramontina Century com Cepo 7...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(456)</span>
+                    </div>
+                    <div class="price-old">R$ 189,90</div>
+                    <div class="discount-badge">Baixou 21%</div>
+                    <div class="installment-info">R$ 149,90 ou em até 3x de R$ 49,97 sem juros ou</div>
+                    <div class="price-main">R$ 149,90</div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Cafeteira">
+                    <h4>Cafeteira Elétrica Britânia CP38 Inox Plus...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(892)</span>
+                    </div>
+                    <div class="price-old">R$ 299,90</div>
+                    <div class="discount-badge">Baixou 33%</div>
+                    <div class="installment-info">R$ 199,90 ou em até 4x de R$ 49,98 sem juros ou</div>
+                    <div class="price-main">R$ 179,91</div>
+                    <div class="payment-method">No Pix</div>
+                </div>
+                <div class="produto-card hidden">
+                    <img src="./imagens/utilidades.avif" alt="Conjunto de Potes">
+                    <h4>Conjunto de Potes Herméticos Electrolux 5...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(234)</span>
+                    </div>
+                    <div class="price-old">R$ 89,90</div>
+                    <div class="discount-badge">Baixou 22%</div>
+                    <div class="installment-info">R$ 69,90 ou em até 2x de R$ 34,95 sem juros ou</div>
+                    <div class="price-main">R$ 69,90</div>
+                </div>
+                <div class="produto-card hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/eletroportaveis.avif" alt="Liquidificador">
+                    <h4>Liquidificador Oster Clássico 3 Velocidades...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(678)</span>
+                    </div>
+                    <div class="price-old">R$ 249,90</div>
+                    <div class="discount-badge">Baixou 28%</div>
+                    <div class="installment-info">R$ 179,90 ou em até 3x de R$ 59,97 sem juros ou</div>
+                    <div class="price-main">R$ 161,91</div>
+                    <div class="payment-method">No Pix</div>
+                </div>
+            </div>
+            <button class="seta-mais" onclick="toggleCasa()" id="setCasa">
+                ›
+            </button>
+        </div>
+    </section>
+
+    <!-- Banners Promocionais Section -->
+    <section class="banners-promocionais">
+        <div class="container">
+            <div class="banners-top-row">
+                <div class="banner-item">
+                    <img src="./imagem desconto/1d7b6523-73e4-42d6-a965-c70086949ba9.avif" alt="Autocuidado em primeiro lugar">
+                </div>
+                <div class="banner-item">
+                    <img src="./imagem desconto/849be82ec8bacff05253f2893d144653.jpeg" alt="Hora de correr">
+                </div>
+                <div class="banner-item">
+                    <img src="./imagem desconto/3a519187-6624-4449-8499-efd3df84ce22.avif" alt="Transforme seu lar">
+                </div>
+                <div class="banner-item">
+                    <img src="./imagem desconto/a5a49689-f838-4bfb-bc8e-4db00fcf043e.avif" alt="Hora da Diversão">
+                </div>
+            </div>
+            <div class="banners-middle-row">
+                <div class="banner-large">
+                    <img src="./imagem desconto/88c13105a989c98fd8887a878e75313e.jpeg" alt="Samsung">
+                </div>
+                <div class="banner-large">
+                    <img src="./imagem desconto/05-calhau-frete-644x90.png" alt="Frete Grátis">
+                </div>
+            </div>
+            <div class="banners-bottom-row">
+                <div class="banner-item">
+                    <img src="./imagem desconto/5617644f-0024-41fe-9967-8c700ab31e25.avif" alt="Samsung Vision AI">
+                </div>
+                <div class="banner-item">
+                    <img src="./imagem desconto/01-calhau-carne-320x280.avif" alt="Carnê Digital">
+                </div>
+                <div class="banner-item">
+                    <img src="./imagem desconto/02-calhau-retira-320x280.png" alt="Compre no site e retire grátis">
+                </div>
+                <div class="banner-item">
+                    <img src="./imagem desconto/03-calhau-oferta_tv-320x280.png" alt="Confira as ofertas da TV">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Patrocinados Section -->
+    <section class="produtos-patrocinados">
+        <div class="container">
+            <h2>Produtos Patrocinados</h2>
+            <div class="patrocinados-grid">
+                <div class="produto-patrocinado">
+                    <div class="produto-badge patrocinado">Patrocinado</div>
+                    <img src="./imagens/celular.webp" alt="Smartphone Motorola">
+                    <h4>Smartphone Motorola Moto g96 5G + Moto buds 256GB, 12GB...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 2.599,00</div>
+                    <div class="discount-badge">Baixou 9%</div>
+                    <div class="installment-info">R$ 2.399,00 ou em até 10x de R$ 239,90 sem juros ou</div>
+                    <div class="price-main">R$ 2.087,13</div>
+                    <div class="payment-method">no PIX</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">FRETE GRÁTIS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado">
+                    <div class="produto-badge desconto">10% OFF</div>
+                    <img src="./imagens/celular.webp" alt="Smartphone Oppo">
+                    <h4>Smartphone Oppo RENO 13F 5G Grafite 256GB, 12GB...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 3.620,00</div>
+                    <div class="discount-badge">Baixou 9%</div>
+                    <div class="installment-info">R$ 3.322,11 ou em até 10x de R$ 332,21 sem juros ou</div>
+                    <div class="price-main">R$ 2.989,90</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado">
+                    <img src="./imagens/celular.webp" alt="Smartphone Motorola Edge">
+                    <h4>Smartphone Motorola Edge 50 Neo 5G - 256GB 16GB...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(1)</span>
+                    </div>
+                    <div class="price-old">R$ 2.199,00</div>
+                    <div class="discount-badge">Baixou 24%</div>
+                    <div class="installment-info">R$ 1.899,00 ou em até 12x de R$ 158,25 sem juros ou</div>
+                    <div class="price-main">R$ 1.709,10</div>
+                    <div class="payment-method">no PIX</div>
+                    <div class="action-buttons">
+                        <button class="btn-frete">FRETE GRÁTIS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado">
+                    <div class="produto-badge desconto">10% OFF</div>
+                    <img src="./imagens/celular.webp" alt="Smartphone Oppo RENO">
+                    <h4>Smartphone Oppo RENO 13F 5G Lavanda 256GB, 12GB...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(2)</span>
+                    </div>
+                    <div class="price-old">R$ 3.999,00</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 3.322,11 ou em até 10x de R$ 332,21 sem juros ou</div>
+                    <div class="price-main">R$ 2.989,90</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado">
+                    <img src="./imagens/geladeira.avif" alt="Cervejeira Home Bar">
+                    <h4>Cervejeira Home Bar Electrolux EB100 Frost Free...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(1)</span>
+                    </div>
+                    <div class="price-old">R$ 3.679,00</div>
+                    <div class="discount-badge">Baixou 22%</div>
+                    <div class="installment-info">R$ 2.679,38 ou em até 10x de R$ 267,94 sem juros ou</div>
+                    <div class="price-main">R$ 2.599,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">COM CARNÊ DIGITAL</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado hidden">
+                    <div class="produto-badge cupom">CUPOM DE DESCONTO</div>
+                    <img src="./imagens/tv.avif" alt="Smart TV TCL 55">
+                    <h4>Smart TV 55" TCL 55C6K 4K QD-Mini Led 144Hz com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(11)</span>
+                    </div>
+                    <div class="price-old">R$ 3.706,97</div>
+                    <div class="discount-badge">Baixou 15%</div>
+                    <div class="installment-info">R$ 3.164,11 ou em até 10x de R$ 316,41 sem juros ou</div>
+                    <div class="price-main">R$ 3.005,90</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado hidden">
+                    <img src="./imagens/tv.avif" alt="Smart TV TCL 75">
+                    <h4>Smart TV 75" TCL 75C7K 4K QD-Mini Led 144Hz com...</h4>
+                    <div class="rating">
+                        <span class="stars">☆☆☆☆☆</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                    <div class="price-old">R$ 9.999,98</div>
+                    <div class="discount-badge">Baixou 26%</div>
+                    <div class="installment-info">R$ 7.399,89 ou em até 10x de R$ 739,99 sem juros ou</div>
+                    <div class="price-main">R$ 7.029,90</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado hidden">
+                    <div class="produto-badge cupom">CUPOM DE DESCONTO</div>
+                    <img src="./imagens/tv.avif" alt="Smart TV TCL 50">
+                    <h4>Smart TV 50" TCL 50P7K 4K QLED UHD 60Hz com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(41)</span>
+                    </div>
+                    <div class="price-old">R$ 2.699,00</div>
+                    <div class="discount-badge">Baixou 19%</div>
+                    <div class="installment-info">R$ 2.199,00 ou em até 10x de R$ 219,90 sem juros ou</div>
+                    <div class="price-main">R$ 2.089,05</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado hidden">
+                    <div class="produto-badge desconto">3% OFF</div>
+                    <img src="./imagens/tv.avif" alt="Smart TV TCL 55">
+                    <h4>Smart TV 55" TCL 55P7K 4K QLED 60Hz com Sistema...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(80)</span>
+                    </div>
+                    <div class="price-old">R$ 2.896,82</div>
+                    <div class="discount-badge">Baixou 17%</div>
+                    <div class="installment-info">R$ 2.398,95 ou em até 10x de R$ 239,90 sem juros ou</div>
+                    <div class="price-main">R$ 2.279,00</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+                <div class="produto-patrocinado hidden">
+                    <div class="produto-badge cupom">CUPOM DE DESCONTO</div>
+                    <img src="./imagens/tv.avif" alt="Smart TV TCL 65">
+                    <h4>Smart TV 65" TCL QLED 4K Ultra HD 65P7K com...</h4>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(80)</span>
+                    </div>
+                    <div class="price-old">R$ 4.199,00</div>
+                    <div class="discount-badge">Baixou 17%</div>
+                    <div class="installment-info">R$ 3.499,00 ou em até 10x de R$ 349,90 sem juros ou</div>
+                    <div class="price-main">R$ 3.149,10</div>
+                    <div class="payment-method">No Pix</div>
+                    <div class="action-buttons">
+                        <button class="btn-desconto">DESCONTO PAGANDO</button>
+                        <button class="btn-frete">CONFIRA AS REGRAS</button>
+                    </div>
+                </div>
+
+            </div>
+            <button class="seta-mais" onclick="togglePatrocinados()" id="setaPatrocinados">
+                ›
+            </button>
+        </div>
+    </section>
+
+    <!-- Banners Finais Section -->
+    <section class="banners-finais">
+        <div class="container">
+            <div class="banner-final-item">
+                <img src="./imagem final/6773a4e253b6c6963707bdf90f9af48d.jpeg" alt="Samsung">
+            </div>
+            <div class="banner-final-item">
+                <img src="./imagem final/9a186d98-1cff-4e94-850f-1e70991fa727.avif" alt="72 Horas de Ofertas Brastemp">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CENTRAL DE VENDAS</h3>
+                    <p>Compre pelo Whatsapp 📱</p>
+                </div>
+                <div class="footer-column">
+                    <h3>CENTRAL DE ATENDIMENTO</h3>
+                    <p>4003-4336 &nbsp;&nbsp;&nbsp; Fale pelo Whatsapp 📱</p>
+                </div>
+                <div class="footer-column">
+                    <h3>PARA RJ E REGIÃO</h3>
+                    <p>0800-200-4336</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>MEUS PEDIDOS</h4>
+                    <ul>
+                        <li><a href="#">Acompanhe seus pedidos</a></li>
+                        <li><a href="#">Editar cadastro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CASAS BAHIA</h4>
+                    <ul>
+                        <li><a href="#">Quem somos</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Lista de Presentes</a></li>
+                        <li><a href="#">Trabalhe conosco</a></li>
+                        <li><a href="#">Venda seus produtos</a></li>
+                        <li><a href="#">Black Friday</a></li>
+                        <li><a href="#">Desenrola Brasil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>AJUDA</h4>
+                    <ul>
+                        <li><a href="#">Mapa do Site</a></li>
+                        <li><a href="#">Atendimento em libras</a></li>
+                        <li><a href="#">Prazos e locais de entrega</a></li>
+                        <li><a href="#">Política de Troca e Devolução</a></li>
+                        <li><a href="#">Quantidade de itens por pedido</a></li>
+                        <li><a href="#">Portal de Privacidade</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos e Condições de Uso</a></li>
+                        <li><a href="#">Segurança Digital</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Bottom Section -->
+    <section class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <div class="social-section">
+                    <h4>ACOMPANHE NAS REDES SOCIAIS</h4>
+                    <div class="social-icons">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                        <a href="#">📺</a>
+                    </div>
+                </div>
+                <div class="payment-section">
+                    <h4>FORMAS DE PAGAMENTOS</h4>
+                    <div class="payment-methods">
+                        <span>Cartões do Grupo</span>
+                        <span>Crédito</span>
+                        <span>Outras formas</span>
+                    </div>
+                    <div class="payment-cards">
+                        <span>Casas Bahia</span>
+                        <span>Pontofrio</span>
+                        <span>Extra</span>
+                        <span>Visa</span>
+                        <span>Mastercard</span>
+                        <span>Elo</span>
+                        <span>American Express</span>
+                        <span>Diners Club</span>
+                        <span>Hipercard</span>
+                        <span>Banescad</span>
+                        <span>JCB</span>
+                        <span>BanQi</span>
+                        <span>Carnê Digital</span>
+                        <span>Pix</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-section">
+                <h4>PRODUTOS MAIS BUSCADOS</h4>
+                <div class="products-grid">
+                    <a href="#">Air fryer</a>
+                    <a href="#">Ar condicionado</a>
+                    <a href="#">Armário de cozinha</a>
+                    <a href="#">Bicicleta</a>
+                    <a href="#">Cama</a>
+                    <a href="#">Celular</a>
+                    <a href="#">Celular Motorola</a>
+                    <a href="#">Celular Samsung</a>
+                    <a href="#">Colchão</a>
+                    <a href="#">Computador</a>
+                    <a href="#">Cooktop</a>
+                    <a href="#">Fogão 4 bocas</a>
+                    <a href="#">Fralda</a>
+                    <a href="#">Geladeira</a>
+                    <a href="#">Guarda roupa</a>
+                    <a href="#">iPhone</a>
+                    <a href="#">iPhone 11</a>
+                    <a href="#">iPhone 12</a>
+                    <a href="#">iPhone 13</a>
+                    <a href="#">iPhone 14</a>
+                    <a href="#">iPhone 15</a>
+                    <a href="#">iPhone 15 Pro</a>
+                    <a href="#">iPhone 16</a>
+                    <a href="#">Liquidificador</a>
+                    <a href="#">Máquina de lavar</a>
+                    <a href="#">Microondas</a>
+                    <a href="#">Notebook</a>
+                    <a href="#">Pneu</a>
+                    <a href="#">Pneu aro 13</a>
+                    <a href="#">Rack</a>
+                    <a href="#">Smart TV</a>
+                    <a href="#">Smartphone</a>
+                    <a href="#">Smartwatch</a>
+                    <a href="#">Sofá</a>
+                    <a href="#">Tanquinho</a>
+                    <a href="#">Tênis</a>
+                    <a href="#">TV</a>
+                    <a href="#">Ventilador</a>
+                    <a href="#">Xiaomi</a>
+                    <a href="#">PS5</a>
+                    <a href="#">Xbox</a>
+                    <a href="#">S25</a>
+                    <a href="#">Cafeteira</a>
+                    <a href="#">Galaxy S24</a>
+                    <a href="#">TV 50 4K</a>
+                    <a href="#">TV 32 polegadas</a>
+                    <a href="#">Umidificador de ar</a>
+                    <a href="#">Bicicleta ergométrica</a>
+                    <a href="#">Ar condicionado portátil</a>
+                    <a href="#">Tablet</a>
+                </div>
+            </div>
+            <div class="glossary-section">
+                <h4>GLOSSÁRIO</h4>
+                <div class="glossary-links">
+                    <a href="#">0-9</a>
+                    <a href="#">A</a>
+                    <a href="#">B</a>
+                    <a href="#">C</a>
+                    <a href="#">D</a>
+                    <a href="#">E</a>
+                    <a href="#">F</a>
+                    <a href="#">G</a>
+                    <a href="#">H</a>
+                    <a href="#">I</a>
+                    <a href="#">J</a>
+                    <a href="#">K</a>
+                    <a href="#">L</a>
+                    <a href="#">M</a>
+                    <a href="#">N</a>
+                    <a href="#">O</a>
+                    <a href="#">P</a>
+                    <a href="#">Q</a>
+                    <a href="#">R</a>
+                    <a href="#">S</a>
+                    <a href="#">T</a>
+                    <a href="#">U</a>
+                    <a href="#">V</a>
+                    <a href="#">W</a>
+                    <a href="#">X</a>
+                    <a href="#">Y</a>
+                    <a href="#">Z</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-download">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h3>BAIXE O APP DA CASAS BAHIA</h3>
+                </div>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn google-play">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM1IiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTM1IDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMzUiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjciIHk9IjIwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+R29vZ2xlIFBsYXk8L3RleHQ+PC9zdmc+" alt="Google Play">
+                    </a>
+                    <a href="#" class="app-btn app-store">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM1IiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTM1IDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMzUiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjciIHk9IjIwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QXBwIFN0b3JlPC90ZXh0Pjwvc3ZnPg==" alt="App Store">
+                    </a>
+                </div>
+                <div class="app-rating">
+                    <div class="rating-badge">
+                        <span class="rating-number">4.4</span>
+                        <span class="rating-text">FANTÁSTICA</span>
+                        <div class="rating-subtitle">CASAS BAHIA</div>
+                    </div>
+                    <div class="rating-logo">
+                        <span>consumidor</span>
+                    </div>
+                </div>
+            </div>
+            <div class="app-disclaimer">
+                <p>Preços e condições exclusivas para o site www.casasbahia.com.br, podendo sofrer alterações sem prévia notificação.</p>
+                <p>Grupo Casas Bahia S.A. | Rua Flórida, 1970 | São Paulo - SP | CEP: 04565-001 | CNPJ: 33.041.260/0652-90 | Inscrição Estadual: 133.091.229.115</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CEP Modal -->
+    <div class="cep-modal" id="cepModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Escolha sua localização</h3>
+                <button class="close-btn" onclick="toggleCepModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <p>A gente te ajuda a encontrar o seu produto com menor frete e prazo de entrega.</p>
+                <div class="cep-input-container">
+                    <label>Digite seu CEP</label>
+                    <div class="cep-input-group">
+                        <input type="text" placeholder="_____-___" class="cep-input" id="cepInput">
+                        <button class="confirm-btn" onclick="confirmCep()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

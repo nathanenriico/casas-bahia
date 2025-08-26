@@ -1,0 +1,77 @@
+<!-- Modal Retira Rápido -->
+<div id="retira-rapido-modal" class="retira-modal" style="display: none;">
+    <div class="retira-overlay" onclick="closeRetiraModal()"></div>
+    <div class="retira-container">
+        <button class="retira-close" onclick="closeRetiraModal()">×</button>
+        
+        <div class="retira-left">
+            <h2 class="retira-title">Endereço, pontos de referência ou CEP</h2>
+            <input type="text" class="retira-cep" placeholder="12950-660" value="12950-660">
+            <div class="retira-location">📍 usar minha localização</div>
+            
+            <div class="retira-store">
+                <div class="retira-highlight">
+                    ⭐ Esta é a melhor loja para você!
+                </div>
+                
+                <div class="retira-name">Casas Bahia</div>
+                <div class="retira-subtitle">Mega Loja Marginal Tietê</div>
+                <div class="retira-distance">A 43,86 km</div>
+                <div class="retira-hours">Retirar em 2h</div>
+                <div class="retira-hours">após aprovação do pagamento</div>
+                
+                <div class="retira-address">
+                    Avenida Embaixador Macedo Soares, 9175 - 
+                    Lapa, São Paulo - SP, 05035-900
+                </div>
+                
+                <button class="retira-btn">Retirar nessa loja</button>
+                
+                <a href="#" class="retira-rules">🔗 Conheça as regras do Retira Rápido</a>
+            </div>
+        </div>
+        
+        <div class="retira-right">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.123456789!2d-46.123456!3d-23.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA3JzI0LjQiUyA0NsKwMDcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<style>
+.retira-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; }
+.retira-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+.retira-container { position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: white; display: flex; }
+.retira-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; z-index: 10001; }
+.retira-left { width: 40%; background: #1e40af; color: white; padding: 20px; }
+.retira-right { width: 60%; }
+.retira-title { color: white; font-size: 18px; font-weight: bold; margin-bottom: 20px; }
+.retira-cep { width: 100%; padding: 12px; border: none; border-radius: 4px; margin-bottom: 10px; }
+.retira-location { color: white; text-decoration: underline; font-size: 14px; cursor: pointer; }
+.retira-store { background: white; color: #333; padding: 15px; border-radius: 8px; margin-top: 20px; }
+.retira-highlight { background: #fef3c7; padding: 10px; border-radius: 4px; margin-bottom: 15px; text-align: center; }
+.retira-name { font-weight: bold; color: #1e40af; }
+.retira-subtitle { font-size: 14px; color: #666; }
+.retira-distance { color: #666; font-size: 12px; }
+.retira-hours { color: #16a34a; font-size: 12px; margin-top: 5px; }
+.retira-address { font-size: 14px; margin: 10px 0; }
+.retira-btn { background: #1e40af; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 10px; }
+.retira-rules { color: #1e40af; text-decoration: underline; font-size: 12px; margin-top: 10px; display: block; }
+@media (max-width: 768px) { .retira-container { width: 100%; } .retira-left { width: 100%; } .retira-right { display: none; } }
+</style>
+
+<script>
+function openRetiraModal() {
+    document.getElementById('retira-rapido-modal').style.display = 'block';
+}
+
+function closeRetiraModal() {
+    document.getElementById('retira-rapido-modal').style.display = 'none';
+}
+</script>

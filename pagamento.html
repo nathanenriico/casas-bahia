@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Casas Bahia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .checkout-header {
+            background: #0033C6;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .checkout-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .casas {
+            color: white;
+        }
+        
+        .bahia {
+            color: #ff6600;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .pagamento-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .section-title {
+            color: #0033C6;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .cupom-section {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .cupom-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .cupom-icon {
+            color: #0033C6;
+            font-size: 24px;
+        }
+        
+        .cupom-text {
+            color: #0033C6;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .cupom-arrow {
+            color: #0033C6;
+            font-size: 18px;
+        }
+        
+        .pagamento-title {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .pagamento-opcao {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .pagamento-opcao:hover {
+            border-color: #0033C6;
+        }
+        
+        .pagamento-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .pagamento-icon {
+            color: #0033C6;
+            font-size: 24px;
+        }
+        
+        .pagamento-detalhes {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pagamento-nome {
+            color: #0033C6;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .pagamento-descricao {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .pagamento-preco {
+            color: #0033C6;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .pagamento-arrow {
+            color: #0033C6;
+            font-size: 18px;
+        }
+        
+        .endereco-section {
+            margin-top: 40px;
+        }
+        
+        .endereco-title {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .editar-link {
+            color: #0033C6;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .endereco-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .endereco-tipo {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .endereco-detalhes {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .endereco-destinatario {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .resumo-pedido {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            height: fit-content;
+        }
+        
+        .resumo-title {
+            color: #0033C6;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .produto-resumo {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .produto-imagem {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        .produto-info {
+            flex: 1;
+        }
+        
+        .produto-nome {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .vendido-por {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .vendido-link {
+            color: #0033C6;
+            text-decoration: none;
+        }
+        
+        .entrega-info-resumo {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .entrega-gratis {
+            color: #00aa00;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .produto-preco {
+            text-align: right;
+        }
+        
+        .preco-original {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+        
+        .preco-atual {
+            color: #0033C6;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .preco-pix {
+            color: #0033C6;
+            font-size: 12px;
+        }
+        
+        .resumo-valores {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        
+        .resumo-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .resumo-label {
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .resumo-valor {
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .metodo-aviso {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .footer-info {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 40px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .checkout-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .pagamento-opcao {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .endereco-card {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 20px 10px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .pagamento-opcao {
+                padding: 15px;
+            }
+            
+            .header-links {
+                gap: 15px;
+            }
+            
+            .header-link {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="checkout-header">
+        <div class="container">
+            <div class="logo">
+                <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
+            </div>
+            <div class="header-links">
+                <a href="#" class="header-link">
+                    <span>💬</span>
+                    <span>Central de atendimento</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>📦</span>
+                    <span>Meus Pedidos</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>🔤</span>
+                    <span>Tradutor para Libras</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>🔒</span>
+                    <span>Ambiente 100% seguro</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="pagamento-section">
+            <h2 class="section-title">Pagamento</h2>
+            
+            <div class="cupom-section">
+                <div class="cupom-info">
+                    <span class="cupom-icon">🎫</span>
+                    <span class="cupom-text">Aplicar cupom</span>
+                </div>
+                <span class="cupom-arrow">></span>
+            </div>
+
+            <h3 class="pagamento-title">Como você deseja pagar?</h3>
+            
+            <div class="pagamento-opcao" onclick="window.open('https://mpago.la/2g58BtF', '_blank')">
+                <div class="pagamento-info">
+                    <span class="pagamento-icon">💰</span>
+                    <div class="pagamento-detalhes">
+                        <div class="pagamento-nome">PIX</div>
+                        <div class="pagamento-descricao">Pagamento instantâneo</div>
+                        <div class="pagamento-descricao">Aprovação imediata</div>
+                        <div class="pagamento-preco">R$ 397,99 à vista</div>
+                    </div>
+                </div>
+                <span class="pagamento-arrow">></span>
+            </div>
+            
+            <div class="pagamento-opcao" onclick="window.open('https://mpago.la/2g58BtF', '_blank')">
+                <div class="pagamento-info">
+                    <span class="pagamento-icon">💳</span>
+                    <div class="pagamento-detalhes">
+                        <div class="pagamento-nome">Cartão de crédito</div>
+                        <div class="pagamento-descricao">Pague à vista ou parcelado</div>
+                        <div class="pagamento-preco">a partir de R$ 397,99</div>
+                    </div>
+                </div>
+                <span class="pagamento-arrow">></span>
+            </div>
+            
+
+
+            <div class="endereco-section">
+                <div class="endereco-title">
+                    <span>Revisão de endereço</span>
+                    <a href="#" class="editar-link">Editar endereço</a>
+                </div>
+                
+                <div class="endereco-card">
+                    <div class="endereco-tipo">Casa</div>
+                    <div class="endereco-detalhes" id="endereco-detalhes">
+                        Rua das Margaridas, 375<br>
+                        Nova Cerejeira,<br>
+                        Atibaia - SP<br>
+                        12950-660
+                    </div>
+                    <div class="endereco-destinatario">Envio para: <strong id="endereco-nome">[Nathan Enrico]</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resumo-pedido">
+            <h3 class="resumo-title">Resumo do pedido</h3>
+            
+            <div class="produto-resumo">
+                <img src="./checkout A6/1g.avif" alt="Samsung Galaxy A06" class="produto-imagem">
+                <div class="produto-info">
+                    <div class="produto-nome">1x Smartphone Samsung Galaxy A06 Azul Escuro 4G 128GB 4GB RAM Tela 6,7"...</div>
+                    <div class="vendido-por">Vendido e entregue por <a href="#" class="vendido-link">Casas Bahia</a></div>
+                    <div class="entrega-info-resumo">até <strong>quinta, 28 de agosto:</strong></div>
+                    <div class="entrega-gratis">Grátis</div>
+                </div>
+                <div class="produto-preco">
+                    <div class="preco-original">R$ 976,56</div>
+                    <div class="preco-atual">R$ 397,99</div>
+                    <div class="preco-pix">à vista no Pix</div>
+                </div>
+            </div>
+            
+            <div class="resumo-valores">
+                <div class="resumo-item">
+                    <span class="resumo-label">Entrega</span>
+                    <span class="resumo-valor" style="color: #00aa00;">Grátis</span>
+                </div>
+                
+                <div class="metodo-aviso">Selecione o método de pagamento para visualizar o total</div>
+            </div>
+        </div>
+        
+        <div class="footer-info">
+            Grupo Casas Bahia S.A. | www.casasbahia.com.br | Rua Florida, 1970 | São Paulo - SP | CEP: 04565-001 |<br>
+            CNPJ: 33.041.260/0652-90 | Inscrição Estadual: 133.091.229.115
+        </div>
+    </main>
+    
+    <script>
+        // Carregar dados salvos do localStorage
+        window.onload = function() {
+            const dadosSalvos = localStorage.getItem('dadosEntrega');
+            if (dadosSalvos) {
+                const dados = JSON.parse(dadosSalvos);
+                
+                document.getElementById('endereco-nome').textContent = `[${dados.nome}]`;
+                document.getElementById('endereco-detalhes').innerHTML = 
+                    `${dados.endereco}, ${dados.numero}<br>Nova Cerejeira,<br>Atibaia - SP<br>${dados.cep}`;
+            }
+        };
+    </script>
+</body>
+</html>
