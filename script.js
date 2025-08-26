@@ -597,6 +597,12 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Função para redirecionar para produto Galaxy A06
+function irParaProdutoA06() {
+    window.location.href = './produto.html';
+    return false;
+}
+
 // Inicializar primeira página
 document.addEventListener('DOMContentLoaded', function() {
     showPage(0);
@@ -608,4 +614,17 @@ document.addEventListener('DOMContentLoaded', function() {
             formatCep(this);
         });
     }
+    
+    // Interceptar cliques em produtos Galaxy A06
+    const produtosA06 = document.querySelectorAll('.produto-card');
+    produtosA06.forEach(produto => {
+        const titulo = produto.querySelector('h4');
+        if (titulo && titulo.textContent.includes('Galaxy A06')) {
+            produto.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                irParaProdutoA06();
+            };
+        }
+    });
 });

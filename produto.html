@@ -300,6 +300,13 @@
             margin-bottom: 10px;
         }
         
+        .frete-gratis-info {
+            color: #00aa00;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
         .cep-input-section {
             display: flex;
             gap: 10px;
@@ -1824,7 +1831,8 @@
             }
             
             .header {
-                padding: 10px 0;
+                padding: 8px 0;
+                background: #F7F7F7;
             }
             
             .header .container {
@@ -1844,25 +1852,22 @@
             }
             
             .navigation {
-                overflow-x: auto;
-                padding: 10px 0;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .navigation .container {
-                flex-wrap: nowrap;
-                min-width: max-content;
-            }
-            
-            .nav-links {
-                display: flex;
-                gap: 20px;
-                white-space: nowrap;
+                display: none;
             }
             
             .produto-content {
                 flex-direction: column;
                 gap: 20px;
+            }
+            
+            .produto-header {
+                padding: 15px;
+                margin-bottom: 0;
+            }
+            
+            .produto-title {
+                font-size: 18px;
+                line-height: 1.4;
             }
             
             .produto-images {
@@ -1965,9 +1970,28 @@
                 padding: 0 10px;
             }
             
-            .produto-title {
+            .header {
+                padding: 5px 0;
+            }
+            
+            .header .container {
+                padding: 0 10px;
+            }
+            
+            .logo {
                 font-size: 18px;
-                line-height: 1.4;
+            }
+            
+            .action-item {
+                font-size: 16px;
+                padding: 6px;
+                min-width: 36px;
+                height: 36px;
+            }
+            
+            .produto-title {
+                font-size: 16px;
+                line-height: 1.3;
             }
             
             .produto-image {
@@ -2101,32 +2125,26 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
-                <div class="accessibility">
-                    <span class="accessibility-icon">♿</span>
-                    <span class="accessibility-text">Acessibilidade</span>
+            <div class="header-top">
+                <div class="left-section">
+                    <div class="menu-icon">☰</div>
+                    <div class="logo">
+                        <span class="casas">CASAS</span><span class="bahia">BAHIA</span>
+                    </div>
+                </div>
+                <div class="header-icons">
+                    <div class="icon-item">👤</div>
+                    <div class="icon-item">♥</div>
+                    <div class="icon-item cart-icon">
+                        🛒
+                        <span class="cart-badge">4</span>
+                    </div>
                 </div>
             </div>
             
             <div class="search-container">
                 <input type="text" placeholder="O que você tá procurando?" class="search-input">
                 <button class="search-btn">🔍</button>
-            </div>
-            
-            <div class="header-actions">
-                <div class="action-item cep">
-                    <span class="truck-icon">🚚</span>
-                    <span>Informe seu CEP</span>
-                </div>
-                <div class="action-item account">
-                    <span class="user-icon">👤</span>
-                    <span>Acesse sua conta</span>
-                    <span class="heart-icon">♥️</span>
-                </div>
-                <div class="action-item cart">
-                    <span class="cart-icon">🛒</span>
-                </div>
             </div>
         </div>
     </header>
@@ -2250,6 +2268,7 @@
 
                     <div class="frete-section">
                         <div class="frete-title">Calcule o frete e prazo de entrega</div>
+                        <div class="frete-gratis-info">🚚 Frete Grátis</div>
                         <div class="cep-input-section">
                             <input type="text" placeholder="____-___" class="cep-input-produto">
                             <button class="btn-consultar">Consultar</button>
@@ -3363,3 +3382,26 @@
     <script src="produto.js"></script>
 </body>
 </html>
+<style>
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+}
+
+.icon-item {
+    font-size: 18px;
+    color: #0033C6;
+    cursor: pointer;
+    position: relative;
+}
+</style>
