@@ -585,7 +585,7 @@
 <body class="telefonia-page">
     <!-- LG Banner -->
     <div class="lg-banner">
-        <img src="/imagens/Lg-master-1920x35.png" alt="LG Banner">
+        <img src="./imagens/Lg-master-1920x35.png" alt="LG Banner">
     </div>
 
     <!-- Header -->
@@ -849,7 +849,7 @@
                                     <button class="btn-desconto">DESCONTO PAGANDO</button>
                                 </div>
                             </div>
-                            <div class="produto-card">
+                            <div class="produto-card" onclick="window.location.href='produto.html'">
                                 <div class="cupom-badge">CUPOM DESCONTÃO</div>
                                 <img src="./imagens/celular.webp" alt="Samsung Galaxy A06">
                                 <h4>Smartphone Samsung Galaxy A06 Azul Escuro 4G 128GB...</h4>
@@ -860,8 +860,8 @@
                                 <div class="price-main">R$ 648,90</div>
                                 <div class="payment-method">No Pix</div>
                                 <div class="action-buttons">
-                                    <button class="btn-desconto">DESCONTO PAGANDO</button>
-                                    <button class="btn-regras">CONFIRA AS REGRAS</button>
+                                    <button class="btn-desconto" onclick="event.stopPropagation()">DESCONTO PAGANDO</button>
+                                    <button class="btn-regras" onclick="event.stopPropagation()">CONFIRA AS REGRAS</button>
                                 </div>
                             </div>
                         </div>
